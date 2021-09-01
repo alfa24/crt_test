@@ -1,0 +1,8 @@
+django==3.2.7
+djangorestframework-simplejwt==4.8.0
+djangorestframework==3.12.4
+django-model-utils==4.1.1
+django-rest-registration==0.6.4
+drf-writable-nested==0.6.3
+django-filter==2.4.0
+psycopg2-binary==2.9.1

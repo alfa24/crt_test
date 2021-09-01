@@ -1,0 +1,108 @@
+### Регистрация
+POST {{base_url}}/api/v1/accounts/register/
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "password": "{{password}}",
+  "password_confirm": "{{password}}",
+  "profile": {
+    "city": 1
+  }
+}
+
+
+### Логин
+POST {{base_url}}/api/v1/accounts/token/
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+
+
+
+### Работа с объявлениями
+### Создать объявление
+POST {{base_url}}/api/v1/user/adverts/
+Authorization: Bearer {{access}}
+Content-Type: application/json
+
+{
+  "name": "объявление",
+  "body": "text",
+  "city": 1,
+  "price": 100.00
+}
+
+### Обновить объявление
+PUT {{base_url}}/api/v1/user/adverts/2/
+Authorization: Bearer {{access}}
+Content-Type: application/json
+
+{
+  "name": "объявление1",
+  "body": "text",
+  "city": 1,
+  "price": 100.00
+}
+
+### Просмотреть объявление
+GET {{base_url}}/api/v1/user/adverts/3/
+Authorization: Bearer {{access}}
+
+### список объявлений
+GET {{base_url}}/api/v1/user/adverts/
+Authorization: Bearer {{access}}
+
+### Удалить объявление
+DELETE {{base_url}}/api/v1/user/adverts/2/
+Authorization: Bearer {{access}}
+
+
+
+### Города
+### Создать город
+POST {{base_url}}/api/v1/admin/city/
+Authorization: Bearer {{access}}
+Content-Type: application/json
+
+{
+  "name": "Питер"
+}
+
+### Обновить город
+PUT {{base_url}}/api/v1/admin/city/4/
+Content-Type: application/json
+
+{
+  "name": "Санкт-Петербург"
+}
+
+### Просмотреть город
+GET {{base_url}}/api/v1/admin/city/4/
+Authorization: Bearer {{access}}
+
+### список городов
+GET {{base_url}}/api/v1/admin/city/
+Authorization: Bearer {{access}}
+
+### Удалить город
+DELETE {{base_url}}/api/v1/city/3/
+Authorization: Bearer {{access}}
+
+
+
+### Объявления
+### сортировка объявлений
+GET {{base_url}}/api/v1/adverts/?sort=1
+
+### поиск по тексту объявления
+GET {{base_url}}/api/v1/adverts?search=поииск
+
+### фильтр объявления
+GET {{base_url}}/api/v1/adverts?city=1&user=1
+
+### просмотр объявления
+GET {{base_url}}/api/v1/adverts/1
